@@ -57,8 +57,7 @@ class VariationConfigurator {
         testRunTask.testClassesDir = testInfo.testDestinationDir
         testRunTask.group = JavaBasePlugin.VERIFICATION_GROUP
         testRunTask.description = "Run unit tests for Build '$variationInfo.variationName'."
-        // TODO Gradle 1.7: testRunTask.reports.html.destination =
-        testRunTask.testReportDir =
+        testRunTask.reports.html.destination =
                 file("$project.buildDir/$TEST_REPORT_DIR/$variant.dirName")
         testRunTask.doFirst {
             // Prepend the Android runtime onto the classpath.
